@@ -197,6 +197,41 @@
   @keyframes fadeup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
   .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(150px);background:var(--g900);color:#fff;font-weight:600;font-size:14px;padding:14px 20px;border-radius:11px;box-shadow:var(--sh3);display:flex;align-items:center;gap:11px;transition:transform .4s cubic-bezier(.2,1.2,.3,1);z-index:80;max-width:92vw}
   .toast.show{transform:translateX(-50%) translateY(0)}.toast .i{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}.toast .i.ok{background:#5fe0a0;color:#063}.toast .i.no{background:#FEC84B;color:#5a3a00}.toast .i.sync{background:#9DBDF5;color:#1A3A8A}
+  /* ===== EPC management ===== */
+  .epc-tools{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+  .epc-search{flex:1;min-width:200px;border:1.5px solid var(--g200);border-radius:var(--rmd);padding:9px 12px;font-family:inherit;font-size:13.5px}
+  .epc-search:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px var(--red50)}
+  .chiplist{display:flex;flex-wrap:wrap;gap:5px}
+  .statebadge{font-size:11px;font-weight:600;background:var(--g100);color:var(--g600);border-radius:5px;padding:2px 7px}
+  .statebadge.more{background:var(--g200);color:var(--g700)}
+  .epc-st{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;display:inline-flex;align-items:center;gap:5px}
+  .epc-st.Active{background:var(--succ50);color:var(--succ700)}
+  .epc-st.Onboarding{background:var(--warn50);color:var(--warn700)}
+  .epc-st.Inactive{background:var(--g100);color:var(--g500)}
+  .overlay{position:fixed;inset:0;background:rgba(16,24,40,.5);backdrop-filter:blur(2px);z-index:100;display:flex;opacity:0;pointer-events:none;transition:opacity .2s}
+  .overlay.show{opacity:1;pointer-events:auto}
+  .overlay.center{align-items:center;justify-content:center}
+  .overlay.right{justify-content:flex-end}
+  .modal{background:#fff;border-radius:var(--rlg);box-shadow:var(--sh3);width:min(560px,94vw);max-height:92vh;overflow:auto;transform:translateY(12px);transition:transform .22s}
+  .overlay.right .modal{border-radius:0;width:min(560px,96vw);height:100vh;max-height:100vh;transform:translateX(24px)}
+  .overlay.show .modal{transform:none}
+  .mhead{display:flex;align-items:center;gap:12px;padding:17px 22px;border-bottom:1px solid var(--g100);position:sticky;top:0;background:#fff;z-index:2}
+  .mhead h2{margin:0;font-size:18px;color:var(--g900);font-weight:700}
+  .mhead .mclose{margin-left:auto;border:0;background:var(--g100);width:32px;height:32px;border-radius:8px;cursor:pointer;color:var(--g600);font-size:19px;display:flex;align-items:center;justify-content:center}
+  .mbody{padding:20px 22px}.mbody .infocard{box-shadow:none}
+  .mfoot{display:flex;gap:10px;justify-content:flex-end;padding:15px 22px;border-top:1px solid var(--g100);position:sticky;bottom:0;background:#fff}
+  .statepick{display:flex;flex-wrap:wrap;gap:7px}
+  .statepick label{border:1.5px solid var(--g200);border-radius:20px;padding:6px 13px;font-size:12.5px;font-weight:600;color:var(--g600);cursor:pointer;user-select:none}
+  .statepick input{display:none}.statepick label.on{border-color:var(--red);background:var(--red50);color:var(--red600)}
+  .userrow{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid var(--g100)}.userrow:last-child{border-bottom:0}
+  .userrow .ux{flex:1;min-width:0}.userrow .un{font-size:13.5px;font-weight:700;color:var(--g900)}.userrow .ue{font-size:12px;color:var(--g500)}
+  .invstatus{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap}.invstatus.sent{background:var(--succ50);color:var(--succ700)}.invstatus.none{background:var(--g100);color:var(--g500)}
+  .emailprev{border:1px solid var(--g200);border-radius:var(--rmd);overflow:hidden}
+  .emailprev .eh{background:var(--g50);padding:12px 16px;border-bottom:1px solid var(--g200);font-size:12px;color:var(--g600)}.emailprev .eh b{color:var(--g900)}
+  .emailprev .eb{padding:20px 18px;font-size:13.5px;color:var(--g700);line-height:1.6}
+  .emailprev .ebtn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;margin:10px 0;font-size:13px}
+  .emailprev .elogo{font-family:var(--head);font-weight:700;font-size:18px;color:var(--red);margin-bottom:6px}
+  .notewarn{background:var(--warn50);border:1px solid #FEDF89;border-radius:var(--rmd);padding:10px 13px;font-size:12px;color:var(--warn700);font-weight:600;margin-top:13px;display:flex;gap:8px;align-items:flex-start;line-height:1.45}
   @media(max-width:1000px){.wsgrid{grid-template-columns:1fr}.stagerail{position:static}}
   @media(max-width:900px){.sidebar{display:none}.tips,.fgrid,.steps,.irows,.tiles{grid-template-columns:1fr}.statrow{grid-template-columns:1fr 1fr}.photoreq{grid-template-columns:1fr 1fr}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -209,7 +244,7 @@
     <div class="brand"><div class="mark">M</div><div class="name">Merdeka<small>Back Office</small></div></div>
     <div class="navlabel" id="nav-label">Partner menu</div>
     <nav class="nav" id="nav"></nav>
-    <div class="sb-foot">Cobalt program &middot; v3 prototype<br>SunPower &middot; Merdeka platform</div>
+    <div class="sb-foot">Cobalt program &middot; v4 prototype<br>SunPower &middot; Merdeka platform</div>
   </aside>
   <div class="main">
     <div class="topbar">
@@ -239,9 +274,12 @@
       </section>
       <!-- WORKSPACE -->
       <section id="view-workspace" class="view"></section>
+      <!-- EPC MANAGEMENT -->
+      <section id="view-epc" class="view"></section>
     </div>
   </div>
 </div>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()"><div class="modal" id="modal"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="i ok" id="toast-i"></span><span id="toast-m"></span></div>
 
 <script>
@@ -265,7 +303,7 @@ const COPY={
   partner:{title:"Partner view",explanation:"You are an outside installation partner. Before you win a job you only see your invited jobs. Once you win and accept one, this becomes your workspace for that project, the same screen Merdeka uses internally, where you move it through the stages and talk to the SunPower CSM.",
    tips:["Win a job, then accept the award to open the project workspace.","At Site Survey and Installation you actually add photos and submit, the rest of the stages advance with one confirm.","Anything you submit shows up for the CSM on the other side. Switch views to see it.","The stage rail on the left mirrors the real Merdeka project stages."]},
   csm:{title:"SunPower CSM view",explanation:"You are the SunPower customer success manager overseeing external jobs. You post and award work, then watch each project come to life: you review the partner's submitted photos, confirm the crew on site, move stages, and reply in chat. Everything you do syncs back to Salesforce and QuickBase.",
-   tips:["Post and award jobs in the marketplace, then open the project to oversee it.","When a partner submits their survey or install, you review and approve it here.","Use Confirm crew on site to fire the automated SMS check during installation.","You and the partner share one project record, so your updates and theirs stay in lockstep."]}
+   tips:["Open EPC Management (left menu) to onboard an installer: add them, set their states, add users, and send the welcome email that becomes their login.","Post and award jobs in the marketplace, then open the project to oversee it.","When a partner submits their survey or install, you review and approve it here.","You and the partner share one project record, so your updates and theirs stay in lockstep."]}
  }
 };
 /* ---------------- nav ---------------- */
@@ -309,7 +347,7 @@ function makeProject(j,winType){
 /* ---------------- shells ---------------- */
 const NAV=()=>{
  if(role==='partner')return [{n:'Bidding Marketplace',i:'gavel',scr:'market'},{n:'My Project',i:'clip',scr:'workspace',dis:!project},{n:'EPC Profile',i:'users',lock:1},{n:'Reports',i:'chart',lock:1}];
- return [{n:'Dashboard',i:'home',lock:1},{n:'Bidding Marketplace',i:'gavel',scr:'market'},{n:'Projects',i:'folder',scr:'workspace',dis:!project,badge:project&&pendingForCsm()},{n:'EPC Management',i:'users',lock:1},{n:'Reports',i:'chart',lock:1}];
+ return [{n:'Dashboard',i:'home',lock:1},{n:'Bidding Marketplace',i:'gavel',scr:'market'},{n:'Projects',i:'folder',scr:'workspace',dis:!project,badge:project&&pendingForCsm()},{n:'EPC Management',i:'users',scr:'epc'},{n:'Reports',i:'chart',lock:1}];
 };
 function pendingForCsm(){if(!project)return 0;return (project.stage===1&&project.surveySubmitted)||(project.stage===5&&project.installLogged)?1:0;}
 function renderShell(){
@@ -327,6 +365,7 @@ function renderShell(){
 }
 function journeyStep(){ if(!project)return 0; if(!project.accepted)return 1; if(project.complete)return 4; return 3; }
 function renderJourney(){
+ if(screen==='epc'){document.getElementById('journey').innerHTML='';return;}
  const labels=['Find work','Win a job','Accept award','Work the stages','Activate'];
  const cur=journeyStep();
  document.getElementById('journey').innerHTML='<div class="journey">'+labels.map((l,i)=>{
@@ -388,17 +427,17 @@ function renderCsmMarket(body){
   <div class="f"><label>Install types allowed</label><select><option>Install-Only and Full</option></select></div>
   <div class="f"><label>Floor price <span class="u">($/watt)</span></label><input value="0.75" /></div>
   <div class="f"><label>Auction start <span class="u">($/watt)</span></label><input value="1.00" /></div>
-  <div class="f full"><label>Invite partners <span class="u">(hand-picked)</span></label><div class="invite"><label><input type="checkbox" checked /> Blue Raven Solar</label><label><input type="checkbox" checked /> Sunder Energy</label><label><input type="checkbox" checked /> Freedom Forever</label><label><input type="checkbox" /> ADT Solar</label></div></div></div>
-  <div class="btns" style="max-width:280px;margin-top:18px"><button class="btn btn-primary btn-full" onclick="toast('Job posted to 3 invited partners','ok')">Publish to marketplace</button></div></div>
+  <div class="f full"><label>Invite partners <span class="u">(only Active installers covering this job's state)</span></label><div class="invite" id="invitelist"></div></div></div>
+  <div class="btns" style="max-width:280px;margin-top:18px"><button class="btn btn-primary btn-full" onclick="toast('Job posted to the eligible invited partners','ok')">Publish to marketplace</button></div></div>
  <div class="panel"><h2>Projects</h2><p class="sub">Awarded jobs you oversee. Open one to review submissions, move stages, and chat with the partner.</p>
-  <div class="tablewrap"><table><thead><tr><th>Project</th><th>Partner</th><th>$/W</th><th>Stage</th><th>Status</th><th></th></tr></thead><tbody>${proj}</tbody></table></div></div>`;
+  <div class="tablewrap"><table><thead><tr><th>Project</th><th>Partner</th><th>$/W</th><th>Stage</th><th>Status</th><th></th></tr></thead><tbody>${proj}</tbody></table></div></div>`;renderInvite();
 }
 /* ---------------- actions: bidding ---------------- */
 function bid(i){const j=jobs[i];const n=+(j.cur-j.step).toFixed(2);if(n<j.floor-1e-9){toast('That would drop below the floor','no');return;}j.cur=n;j.bids++;j.mine=true;j.leader='You';renderJobs();toast(`You lead ${j.id} at $${j.cur.toFixed(2)}/W (${money(payout(j))})`,'ok');}
 function buyNow(i){const j=jobs[i];j.cur=j.floor;project=makeProject(j,'buynow');renderShell();renderJourney();renderMarket();toast(`Locked and won ${j.id}. Accept the award to start the project.`,'ok');}
 function acceptAward(){project.accepted=true;project.stage=0;logAct('partner','Blue Raven Solar','Accepted the award and opened the project.');sync();goScreen('workspace');toast('Award accepted. Project opened at Deal Acceptance.','ok');}
 /* ---------------- workspace ---------------- */
-function goScreen(s){screen=s;document.getElementById('view-market').classList.toggle('active',s==='market');document.getElementById('view-workspace').classList.toggle('active',s==='workspace');renderShell();renderJourney();if(s==='market')renderMarket();else renderWorkspace();window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});}
+function goScreen(s){screen=s;['market','workspace','epc'].forEach(v=>document.getElementById('view-'+v).classList.toggle('active',s===v));renderShell();renderJourney();if(s==='market')renderMarket();else if(s==='workspace')renderWorkspace();else renderEpc();window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});}
 function stageStatus(i){ if(!project)return 'lock'; if(i<project.stage)return 'done'; if(i>project.stage)return 'lock';
  if(i===1&&project.surveySubmitted)return 'review'; if(i===5&&project.installLogged)return 'review'; return 'cur';}
 function renderWorkspace(){
@@ -532,11 +571,99 @@ function renderTab(){
 }
 function sendMsg(){const i=document.getElementById('msgin');if(!i||!i.value.trim())return;project.messages.push({who:role,name:role==='partner'?'Blue Raven Solar':'Priya (CSM)',x:i.value.trim()});i.value='';renderTab();}
 /* ---------------- misc ---------------- */
-function setRole(r){role=r;document.getElementById('t-partner').classList.toggle('active',r==='partner');document.getElementById('t-csm').classList.toggle('active',r==='csm');renderShell();renderJourney();if(screen==='market')renderMarket();else renderWorkspace();window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});}
+function setRole(r){role=r;if(r==='partner'&&screen==='epc')screen='market';document.getElementById('t-partner').classList.toggle('active',r==='partner');document.getElementById('t-csm').classList.toggle('active',r==='csm');['market','workspace','epc'].forEach(v=>document.getElementById('view-'+v).classList.toggle('active',screen===v));renderShell();renderJourney();if(screen==='market')renderMarket();else if(screen==='workspace')renderWorkspace();else renderEpc();window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});}
 function resetDemo(){project=null;screen='market';role='partner';jobs.forEach(j=>{if(j.id==='SP-10472'){j.cur=0.85;j.bids=3;j.mine=false;j.leader='Sunder Energy';}});setRole('partner');goScreen('market');toast('Demo reset.','ok');}
 function renderGuide(){document.getElementById('guide-title').textContent=COPY.intro_title;document.getElementById('guide-paras').innerHTML=COPY.intro_paragraphs.map(p=>`<p>${p}</p>`).join('');document.getElementById('guide-steps').innerHTML=COPY.how_to_test.map(s=>`<li>${s}</li>`).join('');}
 function toggleGuide(){const g=document.getElementById('guide');g.classList.toggle('collapsed');}
 let tt;function toast(m,k){const t=document.getElementById('toast');document.getElementById('toast-m').innerHTML=m;const ic=document.getElementById('toast-i');ic.innerHTML=k==='no'?'!':(k==='sync'?'↻':CHECK);ic.className='i '+(k==='no'?'no':(k==='sync'?'sync':'ok'));t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3200);}
+/* ===================== EPC MANAGEMENT ===================== */
+const US_STATES=['AZ','CA','CO','FL','GA','NC','NV','SC','TX','UT'];
+let installers=[
+ {id:'brs',name:'Blue Raven Solar',status:'Active',priority:'High',states:['AZ','NV','UT','TX'],projects:14,users:[{n:'Jordan Blake',e:'jordan@blueravensolar.com',r:'Bidding Partner',invited:true}],welcome:''},
+ {id:'sun',name:'Sunder Energy',status:'Active',priority:'Medium',states:['AZ','CA','FL'],projects:9,users:[{n:'Mara Quinn',e:'mara@sunderenergy.com',r:'Bidding Partner',invited:true}],welcome:''},
+ {id:'free',name:'Freedom Forever',status:'Active',priority:'Medium',states:['TX','FL','GA'],projects:11,users:[{n:'Devon Cole',e:'devon@freedomforever.com',r:'Bidding Partner',invited:true}],welcome:''},
+ {id:'cobalt',name:'Cobalt Power Systems',status:'Onboarding',priority:'High',states:['AZ','NV'],projects:0,users:[],welcome:''},
+];
+const JOB_STATE='AZ'; // the demo's posted job is in Mesa AZ
+let curEpc=null;
+function avInit(n,sz,rad){return `<div class="av" style="width:${sz}px;height:${sz}px;border-radius:${rad}px;background:${avatarColor(n)};color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:700;font-size:${sz>40?18:12}px">${initials(n)}</div>`;}
+function renderEpc(){
+ document.getElementById('crumb').innerHTML='Merdeka / <b>EPC Management</b>';
+ document.getElementById('ptitle').textContent='EPC Management';
+ const tot=installers.length,act=installers.filter(e=>e.status==='Active').length,onb=installers.filter(e=>e.status==='Onboarding').length,prj=installers.reduce((a,e)=>a+e.projects,0);
+ const S=(v,l,p,b,c)=>`<div class="stat"><div class="ic" style="background:${b};color:${c}">${ICON(p,18)}</div><div class="v num">${v}</div><div class="l">${l}</div></div>`;
+ const rows=installers.map(e=>{const chips=e.states.slice(0,3).map(s=>`<span class="statebadge">${s}</span>`).join('')+(e.states.length>3?`<span class="statebadge more">+${e.states.length-3}</span>`:'');
+  return `<tr><td><b>${e.name}</b>${e.status==='Onboarding'?' <span class="mini">(new)</span>':''}<div class="mini">${e.users.length} user${e.users.length===1?'':'s'}</div></td><td><span class="epc-st ${e.status}">${e.status}</span></td><td><div class="chiplist">${chips}</div></td><td class="num">${e.projects}</td><td><button class="tbtn" onclick="openEpc('${e.id}')">Open</button></td></tr>`;}).join('');
+ document.getElementById('view-epc').innerHTML=`
+  <div class="sechead"><h1>EPC Management</h1><span>Manage and track your installers here</span></div>
+  <div class="statrow">${S(tot,'Total installers',IC.users,'#EEF4FF','#3538CD')}${S(act,'Active',IC.gavel,'#ECFDF3','#027A48')}${S(onb,'Onboarding',IC.clip,'#FFFAEB','#B54708')}${S(prj,'Total projects',IC.folder,'#FBEDEC','#C73A34')}</div>
+  <div class="panel"><div class="epc-tools"><input class="epc-search" placeholder="Type to search installers..." oninput="filterEpc(this.value)"><button class="btn btn-primary" style="flex:none" onclick="openAddEpc()">+ Add installer</button></div>
+   <div class="tablewrap"><table><thead><tr><th>Installer (EPC)</th><th>Status</th><th>States covered</th><th>Projects</th><th></th></tr></thead><tbody id="epcrows">${rows}</tbody></table></div></div>`;
+}
+function filterEpc(q){q=q.toLowerCase();document.querySelectorAll('#epcrows tr').forEach(tr=>{tr.style.display=tr.textContent.toLowerCase().includes(q)?'':'none';});}
+/* modal system */
+function openModal(title,body,side,foot){const o=document.getElementById('overlay');o.className='overlay '+(side||'center');document.getElementById('modal').innerHTML=`<div class="mhead"><h2>${title}</h2><button class="mclose" onclick="closeModal()" aria-label="Close">&times;</button></div><div class="mbody">${body}</div>${foot?`<div class="mfoot">${foot}</div>`:''}`;requestAnimationFrame(()=>o.classList.add('show'));}
+function closeModal(){document.getElementById('overlay').classList.remove('show');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+/* add installer */
+function openAddEpc(){
+ const states=US_STATES.map(s=>`<label><input type="checkbox" value="${s}" onchange="this.parentNode.classList.toggle('on',this.checked)">${s}</label>`).join('');
+ openModal('Add installer',`<div class="fgrid"><div class="f full"><label>Installer name *</label><input id="ae-name" placeholder="e.g. Cobalt Power Systems"></div>
+  <div class="f"><label>Status *</label><select id="ae-status"><option>Onboarding</option><option>Active</option></select></div>
+  <div class="f"><label>Priority *</label><select id="ae-prio"><option>High</option><option>Medium</option><option>Low</option></select></div>
+  <div class="f full"><label>States of operation * <span class="u">(jobs in these states route to this installer)</span></label><div class="statepick">${states}</div></div>
+  <div class="f full"><label>Discord role ID <span class="u">(optional)</span></label><input placeholder="optional"></div></div>
+  <div class="notewarn">${BOLT}<span>New installers start in Onboarding and cannot be invited to bid until you Activate them.</span></div>`,
+  'center',`<button class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="saveEpc()">Add installer</button>`);
+}
+function saveEpc(){const name=document.getElementById('ae-name').value.trim();if(!name){toast('Enter an installer name','no');return;}
+ const states=[...document.querySelectorAll('.statepick input:checked')].map(i=>i.value);if(!states.length){toast('Pick at least one state of operation','no');return;}
+ const e={id:'e'+(installers.length+1),name,status:document.getElementById('ae-status').value,priority:document.getElementById('ae-prio').value,states,projects:0,users:[],welcome:''};
+ installers.unshift(e);closeModal();renderEpc();toast(`${name} added as ${e.status}.`,'ok');setTimeout(()=>openEpc(e.id),320);}
+/* epc detail drawer */
+function openEpc(id){curEpc=installers.find(e=>e.id===id);renderEpcDetail();}
+function renderEpcDetail(){const e=curEpc;
+ const chips=e.states.map(s=>`<span class="statebadge">${s}</span>`).join('');
+ const users=e.users.length?e.users.map((u,i)=>`<div class="userrow">${avInit(u.n,34,50)}<div class="ux"><div class="un">${u.n}</div><div class="ue">${u.e} &middot; ${u.r}</div></div><span class="invstatus ${u.invited?'sent':'none'}">${u.invited?'Invite sent':'No login yet'}</span>${u.invited?'':`<button class="tbtn" onclick="welcomeModal(${i})">Send welcome</button>`}</div>`).join(''):`<p class="mini">No users yet. Add a user to give this installer a login that can bid.</p>`;
+ const activate=e.status==='Onboarding'?`<button class="btn btn-primary" onclick="activateEpc()">Activate installer</button>`:`<span class="epc-st Active">${CHECK} Active</span>`;
+ openModal(e.name,`
+  <div style="display:flex;align-items:center;gap:13px;margin-bottom:14px">${avInit(e.name,46,11)}<div><div style="font-family:var(--head);font-weight:700;font-size:18px;color:var(--g900)">${e.name}</div><span class="epc-st ${e.status}">${e.status}</span></div><div style="margin-left:auto">${activate}</div></div>
+  <div class="infocard"><h3>Basic information</h3><div class="irows"><div class="irow"><span class="k">Status</span><span class="v">${e.status}</span></div><div class="irow"><span class="k">Priority</span><span class="v">${e.priority}</span></div></div><div class="lab" style="margin-top:12px">States of operation</div><div class="chiplist">${chips}</div></div>
+  <div class="infocard"><h3 style="display:flex;align-items:center">Users &amp; logins <button class="tbtn" style="margin-left:auto" onclick="addUserModal()">+ Add user</button></h3>${users}</div>
+  <div class="infocard"><h3>Welcome announcement</h3><textarea id="epc-welcome" rows="2" style="width:100%;border:1.5px solid var(--g200);border-radius:8px;padding:10px;font-family:inherit;font-size:13px;resize:vertical" placeholder="Optional in-portal welcome message for this installer">${e.welcome||''}</textarea><p class="mini" style="margin-top:8px">The welcome email is sent per user when you add them. This message is the in-portal announcement.</p></div>`,
+  'right');
+}
+function activateEpc(){curEpc.status='Active';renderEpc();renderEpcDetail();toast(`${curEpc.name} is now Active and can be invited to bid on jobs in ${curEpc.states.join(', ')}.`,'ok');}
+/* add user */
+function addUserModal(){
+ openModal('Add user',`<div class="fgrid"><div class="f"><label>First name *</label><input id="u-fn"></div><div class="f"><label>Last name *</label><input id="u-ln"></div>
+  <div class="f full"><label>Email *</label><input id="u-em" placeholder="name@company.com"></div>
+  <div class="f"><label>Phone *</label><input id="u-ph" placeholder="+1 ..."></div>
+  <div class="f"><label>Role *</label><select id="u-role"><option>Bidding Partner (scoped)</option><option>Installer Admin (scoped)</option></select></div>
+  <div class="f full"><label>Company</label><input value="${curEpc.name}" disabled></div></div>
+  <div class="notewarn">${BOLT}<span>This creates a login scoped to ${curEpc.name}, so the user only sees this installer's jobs. The welcome email is the access handoff: they set a password from a magic link before they can sign in and bid.</span></div>`,
+  'center',`<button class="btn btn-ghost" onclick="renderEpcDetail()">Cancel</button><button class="btn btn-primary" onclick="saveUser()">Create user</button>`);
+}
+function saveUser(){const fn=(document.getElementById('u-fn').value||'').trim(),ln=(document.getElementById('u-ln').value||'').trim(),em=(document.getElementById('u-em').value||'').trim();
+ if(!fn||!ln||!em){toast('Fill in first name, last name and email','no');return;}
+ if(curEpc.users.some(u=>u.e.toLowerCase()===em.toLowerCase())){toast('A user with that email already exists','no');return;}
+ curEpc.users.push({n:fn+' '+ln,e:em,r:document.getElementById('u-role').value.replace(' (scoped)',''),invited:false});
+ renderEpc();toast('User created. Send the welcome email to give them access.','ok');welcomeModal(curEpc.users.length-1);
+}
+/* welcome email */
+function welcomeModal(i){const u=curEpc.users[i];
+ openModal('Send welcome email',`<div class="emailprev"><div class="eh">To: <b>${u.e}</b><br>Subject: <b>Welcome to the Bidding Portal, set up your account</b></div>
+  <div class="eb"><div class="elogo">Cobalt Bidding Portal</div>Hi ${u.n.split(' ')[0]},<br><br>Your account for <b>${curEpc.name}</b> on the SunPower bidding portal has been created. To activate it and set your password, click below.<br><div class="ebtn">Set up your password</div><br>This link signs you in to view and bid on the solar jobs your company is invited to. Your password needs at least 8 characters, with an upper and lower case letter, a number, and a symbol.<br><br>Need a hand? merdeka@sunderenergy.com</div></div>
+  <div class="notewarn">${BOLT}<span>Until the user sets their password from this link, they cannot sign in or bid. This email is the access handoff that turns the user into a working login.</span></div>`,
+  'center',`<button class="btn btn-ghost" onclick="renderEpcDetail()">Close</button><button class="btn btn-primary" onclick="sendWelcome(${i})">Send welcome email</button>`);
+}
+function sendWelcome(i){curEpc.users[i].invited=true;renderEpc();renderEpcDetail();toast(`Welcome email sent to ${curEpc.users[i].e}.`,'ok');}
+/* coverage-aware invite list on the post-a-job form (the tie-back) */
+function renderInvite(){const el=document.getElementById('invitelist');if(!el)return;
+ el.innerHTML=installers.map(e=>{const cover=e.states.includes(JOB_STATE);const elig=e.status==='Active'&&cover;
+  const why=e.status!=='Active'?e.status:(cover?'':'not in '+JOB_STATE);
+  return `<label style="${elig?'':'opacity:.5;cursor:not-allowed'}"><input type="checkbox" ${elig&&e.id!=='free'?'checked':''} ${elig?'':'disabled'}/> ${e.name}${elig?'':` <span class="mini">(${why})</span>`}</label>`;}).join('');
+}
 renderGuide();renderShell();renderJourney();renderMarket();
 </script>
 </body>
